@@ -1,0 +1,19 @@
+<script>
+
+	// 自己编写的一个测试脚本: prototype属性的使用;
+
+	function Test(name) {
+		this.name = name;
+		this.show = function() {
+			alert("Hello");
+		}
+	}
+	Test.prototype.running = function() {
+		alert(this.name + " is running!");
+	}
+
+	var test = new Test("Jeu");
+	test.show();
+	test.running();
+
+</script>

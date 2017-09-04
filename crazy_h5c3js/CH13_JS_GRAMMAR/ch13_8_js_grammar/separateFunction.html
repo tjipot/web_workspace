@@ -1,0 +1,42 @@
+<script>
+
+    /**
+     * @param name
+     * @param age
+     * @param yell
+     * @constructor
+     */
+    function Dog(name, age, yell) {
+        // instance property;
+        this.name = name;
+        this.age  = age;
+        this.yell = yell;
+        // embeded fn, instance method, but independent;
+        this.info = function() {
+            return this.name + "'s age is: " + this.age + ", its yell is: " + this.yell;
+        }
+    }
+
+    // A Dog Instance;
+    var dog = new Dog("Doggy", 3, "Bark, Bark..");
+
+    /**
+     * @param name
+     * @param age
+     * @param yell
+     * @constructor
+     */
+    // A Cat Class/Fn;
+    function Cat(name, age, yell) {
+        this.name = name;
+        this.age  = age;
+        this.yell = yell;
+    }
+
+    // A Cat Instance;
+    var cat = new Cat("Catty", 2, "Miao Miao..");
+
+    // Let cat be the caller: fn in JS is independent, this is the `independent` in JS;
+    alert(dog.info.call(cat));
+
+</script>

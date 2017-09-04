@@ -1,0 +1,22 @@
+<script>
+
+    var hello = function(name) {
+        document.write("Hello, " + name);
+    };
+
+    window.hello("My Name<br/>");
+
+    var p = {
+      walk: function () {
+          for(var i = 0; i < 2; i++) {
+              document.write("Walking Slowly..<br/>");
+          }
+      }
+    };
+
+    p.walk();
+    window.p.walk();
+    // An Error.
+    //window.walk();
+
+</script>

@@ -1,0 +1,41 @@
+<script type="text/javascript">
+
+	var geoHandler = function(position) {
+		var geoMsg = "The Geolocation Info Is:<br/>";
+		geoMsg += "timestamp attr is: " + position.timestamp + "<br/>";
+		var coords = position.coords;
+		for(var prop in coords) {
+			geoMsg += prop + "-->" + coords[prop] + "<br/>";
+		}
+		document.writeln(geoMsg);
+	}
+
+	var errorHandler = function(error) {
+		var errMsg = {
+			1:'Denied By User!',
+			2:'Can\'t Get Geo Info!',
+			3:'Timeout Getting Geo Info!'
+		};
+		alert(errMsg[error.code]);
+	}
+
+	navigator.geolocation.getCurrentPosition(geoHandler,
+		errorHandler,
+		{
+			enableHighAccuracy:true,
+			maximumAge:1000
+		});
+
+	/* 半天才刷出来, 还以为代码错了, @20170630;
+	 The Geolocation Info Is:
+	 timestamp attr is: 1498790288829
+	 latitude-->22.533012
+	 longitude-->113.930475
+	 altitude-->0
+	 accuracy-->2116159
+	 altitudeAccuracy-->0
+	 heading-->NaN
+	 speed-->NaN
+	 */
+
+</script>

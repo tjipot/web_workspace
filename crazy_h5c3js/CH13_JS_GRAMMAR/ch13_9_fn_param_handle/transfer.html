@@ -1,0 +1,14 @@
+<script>
+
+    // Fn of JS is passed by value: basic data type passing;
+    function change(arg1) {
+    	arg1 = 10;
+    	document.write("Value of arg1 in Fn is: " + arg1 + "<br/>");
+    }
+
+    var x = 5;
+    document.write("Value of x before fn calling: " + x + "<br/>");
+    change(x);
+    document.write("Value of x after fn calling: " + x + "<br/>");
+
+</script>

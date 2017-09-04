@@ -1,0 +1,30 @@
+<script type="text/javascript">
+	
+	// window.status = "HGllo";
+
+	// window.history.go(0);
+
+	// alert(window.screen.colorDepth + " " + window.screen.width + " " + window.screen.height);
+
+	// alert(JSON.stringify(navigator));
+	// alert(navigator.appVersion);
+	// alert(navigator.userAgent);
+	// alert(navigator.vendor);
+	// console.log(navigator);
+
+	// @20170630;
+	alert("Out");
+	if(navigator.geolocation) {
+		alert("Works");
+	}
+
+	var showGeolocation = function(position) {
+		console.log(position.timestamp);
+	}
+
+	navigator.geolocation.getCurrentPosition(showGeolocation);
+
+
+
+
+</script>

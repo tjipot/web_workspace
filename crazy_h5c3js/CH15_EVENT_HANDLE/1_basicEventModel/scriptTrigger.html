@@ -1,0 +1,46 @@
+<!-- @20170710 -->
+<h2>触发脚本的事件</h2>
+<form method="post" name="register" action="https://www.baidu.com">
+	用户名:<input type="text" name="user"/><br>
+	密码:<input type="password" name="pass"/><br>
+	Email:<input type="text" name="email"/><br>
+	<!--<input type="submit" id="regist" value="Submit"/>&lt;!&ndash; submit是一个button &ndash;&gt;-->
+	<input type="button" id="regist" value="Submit"/><!-- button也是个button -->
+</form>
+
+<script>
+
+	String.prototype.trim = function() {
+		return this.replace(/^\s*/, "").replace(/^s*$/, "");
+	}
+
+	var check = function() {
+		var form = document.forms[0];
+		var errStr = "";
+
+		if(form.user.value == null || form.user.value.trim() == "") {
+			errStr += "\nUser Account Can't Be Empty!";
+			form.user.focus();
+		}
+
+		if(form.pass.value == null || form.pass.value.trim() == "") {
+			errStr += "\nUser Password Can't Be Empty!";
+			form.pass.focus();
+		}
+
+		if(form.email.value == null || form.email.value.trim() == "") {
+			errStr += "\nUser Email Can't Be Empty!";
+			form.email.focus();
+		}
+
+		if(errStr != "") {
+			alert(errStr);
+		}else {
+			form.submit();  // 在代码中手动提交表单;
+		}
+	}
+
+	// 为第一个表单的onclick绑定事件处理器;
+	document.getElementById("regist").onclick = check;  // 将check对象赋予给onclick事件;
+
+</script>

@@ -1,0 +1,24 @@
+<script>
+
+    function changeAge(person) {
+        if(typeof person == 'object' && typeof person.age == 'number') {
+			document.write("Value of person.age before fn calling: " + person.age + "<br/>");
+			person.age = 10;
+			document.write("Value of person.age during fn calling: " + person.age + "<br/>");
+		}else{
+        	document.writeln("Param type not consistent! " + typeof person + "<br/>");
+        }
+    }
+
+    changeAge();
+    changeAge('xxx');
+    changeAge(true);
+
+    // JavaScript Object Notation;
+    p = {abc:34};   // abc is not age;
+    changeAge(p);
+
+    person = {age:25};
+	changeAge(person);
+
+</script>

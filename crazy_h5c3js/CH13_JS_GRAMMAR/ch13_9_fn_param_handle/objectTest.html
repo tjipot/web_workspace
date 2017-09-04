@@ -1,0 +1,22 @@
+<script>
+
+	function Person(name) {
+		this.name = name;
+	}
+
+	var p = new Person("HYe");
+
+	if(p instanceof Person) {
+		document.writeln("p is an instance of Person.<br/>");
+	}
+
+	if(p instanceof Object) {
+		document.writeln("p is an instance of Obejct.<br/>");
+	}
+
+	/*
+	 p is an instance of Person.
+	 p is an instance of Obejct.
+	 */
+
+</script>

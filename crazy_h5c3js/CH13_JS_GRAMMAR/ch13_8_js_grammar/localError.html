@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	
+function outer() {
+
+	function inner1() {
+		document.write("局部函数_1<br/>");
+	}
+
+	function inner2() {
+		document.write("局部函数_2<br/>");
+	}
+
+	document.write("开始测试局部函数..<br/>");
+	inner1();
+	inner2();
+	document.write("结束测试局部函数..<br/>");
+
+}
+
+document.write("Before calling outer..<br/>");
+outer();
+inner1(); // Illegal;
+document.write("After calling outer..<br/>");
+
+
+</script>

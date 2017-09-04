@@ -1,0 +1,37 @@
+.content{
+    border:1px solid #ddd;
+    width:730px;
+    height: 200px;
+    background: #fff;
+    *position: relative;
+    *z-index: 10;
+}
+.tab{
+    margin-top: 12px;
+    width: 730px;
+    height: 30px;
+    list-style: none;
+    margin-bottom: -1px;
+    *position: relative;
+    *z-index: 20;   
+}
+li{
+    float: left;
+    height: 28px;
+    padding: 0 25px;
+    border: 1px solid #DDDDDD;
+    margin-right: 10px;
+    line-height: 30px;
+    cursor: pointer;
+    background: #FAFAFA;
+    color: #0461B1;
+    font-size: 14px;
+}
+.tab-active{
+    border-bottom:none;
+    border-top-width: 2px;
+    height: 28px;
+    background: #fff;
+    color: #333333;
+    font-weight: bold;
+}

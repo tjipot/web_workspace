@@ -1,0 +1,34 @@
+<script>
+
+    function Student(grade, subject) {      // Defined A Class!;
+        this.grade = grade;
+        Student.subject = subject;
+    }
+
+    s1 = new Student(15, 'Java');
+    with(document) {
+        writeln('s1的grade属性: '          + s1.grade + '<br/>');
+        writeln('s1的subject属性: '        + s1.subject + '<br/>');       // 是类属性;
+        writeln('Student的subject属性: '   + Student.subject + '<br/>');
+    }
+
+    s1.subject = 'Ruby';                    // 这是为s1(对象)增加了属性, 而不是覆盖Student中的subject;
+    with(document) {
+        writeln('<hr/>为s1的subject属性赋值后:<br/>');
+        writeln('s1的subject属性: '        + s1.subject + '<br/>');
+        writeln('Student的subject属性: '   + Student.subject + "<br/>");
+    }
+
+    /*
+     s1的grade属性: 15
+     s1的subject属性: undefined
+     Student的subject属性: Java
+
+     为s1的subject属性赋值后:
+     s1的subject属性: Ruby
+     Student的subject属性: Java
+     */
+
+
+
+</script>

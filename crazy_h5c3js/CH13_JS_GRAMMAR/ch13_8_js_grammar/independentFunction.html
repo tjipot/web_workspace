@@ -1,0 +1,20 @@
+<script>
+
+    function Person(name) {
+        this.name = name;
+        this.info = function() {
+            alert("My Name Is: " + this.name);
+        }
+    }
+
+    var p = new Person("HY");
+    p.info();               // "My Name Is: HY";
+
+    var name = "Test Name";
+
+    // 以window对象作为调用者来调用p对象的info方法;
+    p.info.call(window);    // "My Name Is: Test Name", window对象的'this.name';
+    p.info.call(p);         // "My Name Is: HY";
+
+
+</script>

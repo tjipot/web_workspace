@@ -1,0 +1,27 @@
+<!-- CH13.3.4 -->
+<script>
+
+	var x, y = null;
+
+	// true;
+	if(x === undefined) {
+		alert("DEFAULT VALUE AFTER VARIABLE DECLARATION IS undefined.");
+	}
+
+	// false: two null can't be compared to be equal;
+	if(x === null) {
+		alert("DEFAULT VALUE AFTER VARIABLE DECLARATION IS null.");
+	}
+
+	// true;
+	if(x == y) {
+		alert("x(undefined) == y(null)");
+	}
+
+	// Attr `xyz` is not exist, and will be treated as undefined: true;
+	if(String.xyz === undefined) {
+		alert("NON-EXIST ATTR'S DEFAULT VALUE IS undefined.");
+	}
+
+
+</script>

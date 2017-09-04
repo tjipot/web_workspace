@@ -1,0 +1,41 @@
+<!-- @20170710 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>stopPropagation</title>
+</head>
+<body>
+
+	友情链接:<br>
+	<a id="myLink" href="https://www.baidu.com">BAIDU.COM</a>
+
+	<div id="show"></div>
+	<script>
+
+		// 事件捕获阶段处理函数;
+		var killClick1 = function(event) {
+			event.preventDefault();     // 取消默认事件的默认行为;
+			event.stopPropagation();    // 阻止事件传播;
+			document.getElementById("show").innerHTML += '事件捕获阶段' + event.currentTarget + "<br>";
+		}
+
+		// 事件冒泡阶段处理函数;
+		var killClick2 = function(event) {
+			event.preventDefault();     // 取消事件的默认行为;
+			event.stopPropagation();    // 阻止事件传播;
+			document.getElementById("show").innerHTML += '事件冒泡阶段' + event.currentTarget + "<br>";
+		}
+
+		//	事件捕获阶段, 分别为超链接对象, document对象绑定事件处理函数;
+		document.addEventListener("click", killClick1, true);
+		document.getElementById("myLink").addEventListener("click", killClick1, true);
+
+		// 事件冒泡阶段, 分别为超链接对象, document对象绑定事件处理函数;
+		document.addEventListener("click", killClick2, false);
+		document.getElementById("myLink").addEventListener("click", killClick2, false);
+
+	</script>
+
+</body>
+</html>

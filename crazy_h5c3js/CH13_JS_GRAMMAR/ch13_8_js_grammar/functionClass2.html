@@ -1,0 +1,18 @@
+<script>
+
+    function Person(name, age) {
+        this.name = name;
+        this.age  = age;
+        // 匿名函数使代码更加简洁;
+        this.info = function() {
+            document.writeln("My Name Is: " + this.name + "<br/>");
+            document.writeln("My Age Is: " + this.age + "<br/>");
+        };
+    }
+
+    // Created A Person object;
+    var p = new Person('HY', 24);
+    p.info();
+    alert(p.info);
+
+</script>

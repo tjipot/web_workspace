@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculate Prime</title>
+</head>
+<body>
+
+    <p>Prime already found: <div id="result"></div></p>
+    <script>
+        var worker = new Worker('worker.js');
+        worker.onmessage = function(event) {
+            document.getElementById('result').innerHTML += event.data + ", ";
+        };
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<script>
+
+	function Person(name, age) {
+		this.name = name;
+		this.age  = age;
+		this.info = function() {
+			alert("info() method!");
+		}
+	}
+
+	var p = new Person("HYe", 30);
+	for(propName in p) {
+		document.writeln("Value of obj p's " + propName + " properity is: " + p[propName] + "<br/>");
+	}
+
+	/*
+	 如果用"p.propName"的方式, 会得到:
+	 Value of obj p's name properity is: undefined
+	 Value of obj p's age properity is: undefined
+	 Value of obj p's info properity is: undefined
+	 */
+
+	/*
+	 Value of obj p's name properity is: HYe
+	 Value of obj p's age properity is: 30
+	 Value of obj p's info properity is: function () { alert("info() method!"); }
+	 */
+
+</script>

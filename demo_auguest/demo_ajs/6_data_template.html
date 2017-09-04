@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+  <meta charset="utf-8" />
+  <title>数据->模板</title>
+  <script type="text/javascript" src="http://s.zys.me/js/jq/jquery.js"></script>
+  <script type="text/javascript" src="http://s.zys.me/js/ng/angular.js"></script>
+</head>
+
+<body>
+
+  <p id="test" ng-controller="TestCtrl">{{a}}</p>
+  <script type="text/javascript">
+    var TestCtrl = function($scope) {
+      $scope.a = '123';
+    }
+
+  angular.bootstrap(document.documentElement);
+  </script>
+
+
+</body>
+</html>

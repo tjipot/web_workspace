@@ -1,0 +1,18 @@
+<script>
+
+    function changeAge(person) {
+    	person.age = 10;
+    	document.write("Value of age in Fn processing is: " + person.age + "<br/>");
+    	preson = null;
+    }
+
+    // Define person obj by JSON grammar: complex data type passing;
+    var person = {age:5};
+    document.write("Value of person.age before fn calling is: " + person.age + "<br/>");
+
+    changeAge(person);
+    document.write("Value of person.age after fn calling is: " + person.age + "<br/>");
+    document.write("person obj is: " + person);
+
+
+</script>
