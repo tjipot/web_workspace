@@ -1,0 +1,44 @@
+<DOCTYPE html>
+<head>
+	<title>Test Page</title>
+
+	<script>
+		'use strict'
+		function success(text) {
+			var textarea = document.getElementById('test-response-text');
+			textarea.value = text;
+		}
+
+		function fail(code) {
+			var textarea = document.getElementById('text-response-text');
+			textarea.value = 'Error code: ' + code;
+		}
+
+		var request = new XMLHttpRequest();		// 新建XMLHttpRequest对象(JS内置, 异步用的);
+		request.onreadystatechange = function() {	// 异步, 状态发生变化, 回调;
+			if(request.readyState === 4) {		// 成功完成;
+				if(request.status === 200) {	// 成功, 拿取响应文本;
+					return success(request.responseText);
+				} else {			// 失败, 拿取响应码;
+					return fail(request.status);
+				}
+			} else {
+				// HTTP请求还在继续..
+			}
+		}
+
+		// 发送请求;
+		request.open('GET', '/api/categories'); // 廖雪峰的网站..;
+		request.send();				// request是异步对象, 幸好有回调函数, 程序逻辑得以继续;
+		alert('请求已发送, 请等待响应..');
+	</script>
+
+</head>
+
+<body>
+	<div>
+		<label>Pls Choose A Pic: </label><input type="file">
+	</div>
+
+
+</body>
